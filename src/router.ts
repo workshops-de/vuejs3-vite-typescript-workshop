@@ -8,6 +8,7 @@ import AboutPage from "@/views/AboutPage.vue";
 const BooksPage = () => import("@/views/BooksPage.vue");
 const BookDetail = () => import("@/views/BookDetail.vue");
 const BookList = () => import("@/views/BookList.vue");
+const BookEdit = () => import("@/views/BookEdit.vue");
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -27,6 +28,11 @@ const routes: Array<RouteRecordRaw> = [
         path: ":isbn",
         name: "BookDetail",
         component: BookDetail,
+      },
+      {
+        path: ":isbn/edit",
+        name: "BookEdit",
+        component: BookEdit,
       },
     ],
   },
