@@ -1,7 +1,9 @@
 <template>
+  <label for="search">🔎 </label>
+  <input id="search" v-model="search" placeholder="Search for books by title" />
   <table>
     <BookListItem
-      v-for="(book, index) in books"
+      v-for="(book, index) in filteredBooks"
       :key="book.isbn"
       v-bind="book"
       @read="readBook(index)"
@@ -17,6 +19,7 @@ import http from "@/utils/http";
 import type { Book } from "../types";
 
 interface ComponentData {
+  search: string;
   books: Book[];
 }
 
@@ -27,8 +30,14 @@ export default defineComponent({
   },
   data(): ComponentData {
     return {
+      search: "",
       books: [],
     };
+  },
+  computed: {
+    filteredBooks(): Book[] {
+      return this.books.filter((book) => book.title.includes(this.search));
+    },
   },
   methods: {
     readBook(index: number) {
