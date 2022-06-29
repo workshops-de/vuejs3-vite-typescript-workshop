@@ -2,6 +2,11 @@
   <ul>
     <li><router-link active-class="active" to="/books">Books</router-link></li>
     <li><router-link active-class="active" to="/about">About</router-link></li>
+    <li>
+      <router-link active-class="active" to="/books/create"
+        >New Book</router-link
+      >
+    </li>
   </ul>
 </template>
 
@@ -26,11 +31,11 @@ a {
   text-decoration: none;
 }
 
-a:hover:not(.active) {
+a:hover:not(.router-link-exact-active) {
   background-color: #111111;
 }
 
-a.active {
+a.router-link-exact-active {
   background-color: #4caf50;
 }
 </style>

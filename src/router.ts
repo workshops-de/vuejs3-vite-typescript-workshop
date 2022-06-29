@@ -9,6 +9,7 @@ const BooksPage = () => import("@/views/BooksPage.vue");
 const BookDetail = () => import("@/views/BookDetail.vue");
 const BookList = () => import("@/views/BookList.vue");
 const BookEdit = () => import("@/views/BookEdit.vue");
+const BookNew = () => import("@/views/BookNew.vue");
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -23,6 +24,11 @@ const routes: Array<RouteRecordRaw> = [
         path: "",
         name: "Books",
         component: BookList,
+      },
+      {
+        path: "create",
+        name: "BookNew",
+        component: BookNew,
       },
       {
         path: ":isbn",
