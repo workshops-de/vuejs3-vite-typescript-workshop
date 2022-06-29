@@ -20,6 +20,7 @@ export default defineConfig({
             "./src/views/BooksPage.vue",
             "./src/views/BookList.vue",
             "./src/views/BookDetail.vue",
+            "./src/views/BookEdit.vue",
           ],
         },
       },
